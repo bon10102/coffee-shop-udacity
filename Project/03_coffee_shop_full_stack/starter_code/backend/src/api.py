@@ -107,7 +107,7 @@ def edit_drink(jwt, drink_id):
 
     if drink is None:
         abort(404)
-    if ('title' and 'recipe') not in body:
+    if ('title' or 'recipe') not in body:
         abort(404)
     
     try:

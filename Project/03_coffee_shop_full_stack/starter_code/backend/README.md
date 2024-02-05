@@ -85,3 +85,9 @@ There are `@TODO` comments throughout the `./backend/src`. We recommend tackling
 
 1. `./src/auth/auth.py`
 2. `./src/api.py`
+
+### Environment Variables
+
+Requires a .env file with DB_NAME defined for the backend to work.
+
+For example: `DB_NAME=database.db`

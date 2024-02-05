@@ -8,11 +8,15 @@
 
 #### Installing Node and NPM
 
-This project depends on Nodejs and Node Package Manager (NPM). Before continuing, you must download and install Node (the download includes NPM) from [https://nodejs.com/en/download](https://nodejs.org/en/download/).
+This project depends on Nodejs and Node Package Manager (NPM). Before continuing, you must download and install Node 14.13.1 (the download includes NPM) from [https://nodejs.org/dist/v14.21.3/](https://nodejs.org/dist/v14.21.3/). Download and run the .msi file to install Node.
 
 #### Installing Ionic Cli
 
-The Ionic Command Line Interface is required to serve and build the frontend. Instructions for installing the CLI is in the [Ionic Framework Docs](https://ionicframework.com/docs/installation/cli).
+The Ionic Command Line Interface is required to serve and build the frontend. Instructions for installing the CLI is in the [Ionic Framework Docs](https://ionicframework.com/docs/installation/cli). Ionic CLI 6 is required. Install by running 
+
+```bash
+npm -g i @ionic/cli@6
+```
 
 #### Installing project dependencies
 
@@ -23,6 +27,8 @@ npm install
 ```
 
 > _tip_: **npm i** is shorthand for **npm install**
+
+> _tip_: a known issue is missing the node-sass dependancy. Install node sass 4.14.1 to fix this.
 
 ## Required Tasks
 
@@ -54,3 +60,7 @@ The authentication system used for this project is Auth0. `./src/app/services/au
 ### Authorization
 
 The Auth0 JWT includes claims for permissions based on the user's role within the Auth0 system. This project makes use of these claims using the `auth.can(permission)` method which checks if particular permissions exist within the JWT permissions claim of the currently logged in user. This method is defined in  `./src/app/services/auth.service.ts` and is then used to enable and disable buttons in `./src/app/pages/drink-menu/drink-form/drink-form.html`.
+
+## Known Issues In Frontend
+
+The frontend will not build if NodeJs version is above v14. See this [udacity knowledge](https://knowledge.udacity.com/questions/978561) page to learn more.
